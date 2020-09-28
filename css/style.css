@@ -1,0 +1,446 @@
+/* ------------------------------------- */
+/* ----- COLORS ----------------- */ 
+/* ------------------------------------- */
+/* black primary: #333 */
+/* grey primary:  #eee */
+/* dark #0f0f10 */
+/* pink #f72585 */
+/* ------------------------------------- */
+/* ----- INITIAL SETUP ----------------- */ 
+/* ------------------------------------- */
+*{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a:visited,
+a:link,
+a:hover,
+a:active{
+    text-decoration: none;
+}
+
+h1,h2,h3,p,span{color: #333;}
+
+h1{
+    font-size: 5rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+h2{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 8rem;
+}
+
+
+
+h3{font-size: 3rem;}
+p{font-size: 2rem;}
+
+li{list-style: none;}
+
+section{
+    padding: 10rem 0;
+}
+/* ------------------------------------- */
+/* ----- REUSABLE ----------------- */ 
+/* ------------------------------------- */
+
+.underline{
+    position: relative;
+}
+
+.underline:after{
+        position: absolute;
+        content: '';
+        height: .2rem;
+        bottom: -1rem; 
+        margin: 0 auto;
+		left: 0;
+        right: 0;
+		width: 10rem;
+        background: #f72585; 
+}
+
+.icon-large{
+    font-size: 8rem;
+}
+
+.text-white{
+    color: #eee;
+}
+
+.text-pink{
+    color: #f72585; 
+}
+
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.btn{
+    font-size: 3rem;
+    padding: .8rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btn-dark:link,
+.btn-dark:visited{
+    color: #eee;
+    border: 1px solid #eee; 
+}
+
+.btn-dark:hover,
+.btn-dark:active{
+    border: 1px solid #f72585; 
+    color: #f72585;
+}
+
+.btn-light:link,
+.btn-light:visited{
+    color: #f72585;
+    border: 1px solid #f72585; 
+}
+
+.btn-light:hover,
+.btn-light:active{
+    border: 1px solid #fb91c2; 
+    color: #fb91c2;
+}
+
+.shadow{
+    -webkit-box-shadow: -5px -5px 201px -40px rgba(0,0,0,0.75);
+    box-shadow: -5px -5px 201px -40px rgba(0,0,0,0.75);
+}
+
+/* ------------------------------------- */
+/* ----- NAVBAR ----------------- */ 
+/* ------------------------------------- */
+
+.navbar{
+    background-color: #0f0f10;
+    height: 8rem; 
+    position: fixed;
+    padding: 0 3rem;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar__button{
+   margin-left: auto;
+}
+
+.navbar__button--menu{
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex; 
+   cursor: pointer;
+   margin-left: auto;
+}
+
+/* ---------- menu ---------- */
+
+.dropdown-menu{
+    background-color: #0f0f10;
+    position: fixed;
+    width: 100%;
+    display:  none;
+    top: 8rem;
+    border-bottom: 1px solid #eee;
+    z-index: 1;
+}
+
+
+.dropdown-menu ul,li{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+}
+
+.dropdown-menu ul li a{
+    padding: 1rem;
+}
+
+.dropdown-menu ul li a:hover{
+    background-color: #f72585;
+}
+
+
+/* ------------------------------------- */
+/* ----- HEADER ----------------- */ 
+/* ------------------------------------- */
+
+header{
+    background-color: #0f0f10;
+    height: 100vh;
+    width: 100%;
+    padding: 20rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.header-container{
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.header-text{
+    margin-bottom: 3rem;
+}
+
+.header-btn{
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.header-btn a{
+    margin-bottom:2rem;
+}
+
+
+/* ------------------------------------- */
+/* ----- ABOUT ME ----------------- */ 
+/* ------------------------------------- */
+
+.about{
+    background-color: #eee;    
+    padding: 10rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.about-content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin: 0 3rem;
+}
+
+.about-content__image{
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 36rem;
+    height: 26.64rem;
+    margin-bottom: 3rem;
+}
+
+.about-content__image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.about-content__text{
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 3px;
+    height: 26.64rem;
+    width: 100rem;
+}
+
+/* ------------------------------------- */
+/* ----- PROJECTS ----------------- */ 
+/* ------------------------------------- */
+.proj-container{
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column; 
+    width: 80%;
+    margin: auto;
+}
+
+.proj-images{
+    margin-bottom: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.proj-images img{
+    width: 30rem;
+    margin: 1rem;
+    border: 1px solid #ccc;
+}
+
+.proj-description{
+    margin-bottom: 3rem;
+}
+
+.proj-languages{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-bottom: 5rem;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.icon-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: .3rem;
+}
+
+.icon-container img{
+    width: 5rem;
+}
+
+.icon-container p{
+    font-size: 1.8rem;
+}
+
+.proj-link{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.proj-link a:link,
+.proj-link a:visited,
+.proj-link a:hover,
+.proj-link a:active{
+    width: 100%;
+}
+
+/* ---------- specific projects ---------- */
+
+.drawshare{
+ background: #fafafa;
+}
+
+
+/* ------------------------------------- */
+/* ----- CONTACT ----------------- */ 
+/* ------------------------------------- */
+
+.contact{
+    background: #333;
+    padding: 8rem 8rem 0 8rem;
+    height: 100vh;
+}
+
+.contact h2,
+.contact p{
+    color: #eee;
+}
+.contact-header{
+    text-align: center;
+    margin-bottom: 8rem;
+}
+
+.contact-links{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+
+.contact-link a{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.contact-link a img{
+    width: 6rem;
+}
+
+.contact-link a p{
+    font-size: 1.2rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.mfp-img{
+    z-index: 9999;
+}

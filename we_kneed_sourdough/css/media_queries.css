@@ -1,0 +1,145 @@
+
+@media only screen and (max-width: 980px){
+    html{font-size:  60%;}
+    .hero__text h1{font-size: 4rem; word-spacing: .5rem; letter-spacing: .001rem;}
+
+    .long-text{width:80%;}
+
+    .health-benifits_main{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .health-benifits_main.reverse{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .health-benifits_content{
+        margin: 1rem 0;
+    }
+
+}
+
+@media only screen and (max-width: 785px){
+    html{font-size:  55%;}
+    .hero__text h1{
+        font-size: 3rem;
+        line-height: 5rem;
+        word-spacing: .5rem;
+        letter-spacing: .0008rem;
+    } 
+    h2{font-size: 3rem;}
+    h3{font-size: 2rem;}
+
+    .testimonials_box blockquote{
+        font-size: 1.8rem;
+    }
+
+    .plans_title h3{
+        font-size: 2.5rem;
+    }
+
+    .my_orders{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 570px){
+    html{font-size:  50%;}
+    .hero__text h1{font-size: 2.5rem; line-height: 4rem; word-spacing: .2rem;}
+    h2{font-size: 2.5rem; word-spacing: .001rem;}
+    h3{font-size: 1.8rem;}
+
+    .long-text{font-size: 1.7rem;}
+    .box{width: 80%;} 
+
+    form .row{
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
+    form .row label{
+        font-size: 1.7rem;
+        text-align: left;
+        margin-right: auto;
+        margin-bottom: 1rem;
+    }
+
+    .form-submit-row input[type=submit],
+    .form-submit-row a{
+        width: 100%;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    select,
+    textarea{
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 100%;
+                flex: 1 1 100%;
+    }
+}
+
+@media only screen and (max-width: 410px){
+    html{font-size:  45%;}
+    .hero__text h1{line-height: 3.6rem; word-spacing: .2rem; text-align: center;}
+    h2{font-size: 2.5rem; text-align: center;}
+
+
+    .testimonials_box{
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 80%;
+                flex: 0 0 80%;
+    }
+
+    .navbar__logo{
+        height: 70%;
+    }
+
+    .navbar__name a p{
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+
+    .items{
+        width: 95%;
+        margin: auto;
+    }
+
+    .item__title h3{
+        font-size: 1.4rem;
+    }
+
+    .my_orders{
+        width: 95%;
+    }
+    
+}
+
+@media only screen and (max-width: 361px){
+    .hero__text h1{font-size: 2.2rem; line-height: 3.4rem; word-spacing: .15rem;}
+    h2{font-size: 2.2rem;}
+
+    .item{
+        height: 25rem;
+    }
+
+}
+
+@media only screen and (max-width: 260px){
+    .navbar__logo{
+        display: none;
+    }
+    .navbar__name{
+        display: none;
+    }
+    .item{
+        height: 35rem;
+    }
+}

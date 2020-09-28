@@ -1,0 +1,22 @@
+CREATE DATABASE wksd;
+
+CREATE TABLE `wksd`.`subscription` ( `subscription_id` INT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , PRIMARY KEY (`subscription_id`)) ENGINE = InnoDB;
+CREATE TABLE `wksd`.`customer` ( `customer_id` INT(20) NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(40) NOT NULL , `last_name` VARCHAR(40) NOT NULL , `email` VARCHAR(40) NOT NULL , `address` VARCHAR(200) NOT NULL , `password` VARCHAR(255) NOT NULL ,`subscription_id` INT(20) NOT NULL ,PRIMARY KEY (`customer_id`), INDEX `idx_subscription_id` (`subscription_id`)) ENGINE = InnoDB;
+CREATE TABLE `wksd`.`item` ( `item_id` INT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(40) NOT NULL , `description` VARCHAR(200) NOT NULL , `price` FLOAT(4,2) NOT NULL ,`image` VARCHAR(255) NOT NULL ,PRIMARY KEY (`item_id`)) ENGINE = InnoDB;
+CREATE TABLE `wksd`.`order` ( `order_id` INT(20) NOT NULL AUTO_INCREMENT , `customer_id` INT(20) NOT NULL , `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`order_id`), INDEX `idx_customer_id` (`customer_id`)) ENGINE = InnoDB;
+CREATE TABLE `wksd`.`order_item` ( `order_item_id` INT(20) NOT NULL AUTO_INCREMENT , `order_id` INT(20) NOT NULL , `item_id` INT(20) NOT NULL , PRIMARY KEY (`order_item_id`), INDEX `idx_order_id` (`order_id`), INDEX `idx_item_id` (`item_id`)) ENGINE = InnoDB;
+
+ALTER TABLE `customer` ADD CONSTRAINT `fk_customer_subscription_id` FOREIGN KEY (`subscription_id`) REFERENCES `subscription`(`subscription_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `customer` ADD UNIQUE(`email`);
+ALTER TABLE `order` ADD CONSTRAINT `fk_order_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer`(`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `order_item` ADD CONSTRAINT `fk_order_item_order_id` FOREIGN KEY (`order_id`) REFERENCES `order`(`order_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `order_item` ADD CONSTRAINT `fk_order_item_item_id` FOREIGN KEY (`item_id`) REFERENCES `item`(`item_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+INSERT INTO `subscription` (`subscription_id`, `name`) VALUES (NULL, 'mix and match'), (NULL, 'bread lover'), (NULL, 'breakfast deal'), (NULL, 'none');
+
+INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `email`, `address`, `password`, `subscription_id`) VALUES (NULL, 'james', 'bindin', 'email@email.com', '101, road name, city, county, AB1 2YZ', 'password', '2');
+
+INSERT INTO `item` (`item_id`, `name`, `description`, `price`, `image`) VALUES (NULL, 'margherita', 'classic margherita pizza with a sourdough crust. Authentic tomato sauce topped with mozzarella cheese.', '10.99', 'img/items/margherita.jpg');
+INSERT INTO `item` (`item_id`, `name`, `description`, `price`, `image`) VALUES (NULL, 'neapolitan', 'Authentic Neapolitan with a sourdough base. Crispy thin crust topped with home made tomato sauce with fresh mozzarella and basil.', '10.99', 'img/items/neapolitan.jpg');
+INSERT INTO `item` (`item_id`, `name`, `description`, `price`, `image`) VALUES (NULL, 'chicken fajita', 'spicy fajita pizza on a sourdough base. Tomato base with mozzarella cheese. Topped with charred onion, bell pepper chicken and fresh chilli spiced with cumin. ', '12.99', 'img/items/fajita.jpg');
